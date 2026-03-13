@@ -1,6 +1,6 @@
 c = imread('../../data/Original_Images_1/caribou.jpg');
 cd = double(c);
-cd2 = double(cd/255); %can use function im2double
+cd2 = double(cd/255); %can use fuc
 cd3 = double(cd/128);
 
 figure, imshow(cd2), impixelinfo
