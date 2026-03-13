@@ -1,7 +1,9 @@
 c = imread('../../data/Original_Images_1/caribou.jpg');
 cd = double(c);
 cd2 = double(cd/255);
+cd3 = double(cd/128);
 
 figure, imshow(cd2), impixelinfo
 figure, imshow(c), impixelinfo
 figure, imshow(cd), impixelinfo
+figure, imshow(cd3), impixelinfo
