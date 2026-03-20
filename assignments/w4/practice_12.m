@@ -1,0 +1,1 @@
+c = imread('../../data/Original_Images_1/chickens.png')
