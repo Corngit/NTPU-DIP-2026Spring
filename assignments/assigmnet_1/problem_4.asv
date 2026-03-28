@@ -1,0 +1,26 @@
+img1 = imread('../assigmnet_1/image/cameraman.png');
+img2 = imread('../assigmnet_1/image/emu.png');
+img3 = imread('../assigmnet_1/image/caribou.jpg');
+img4 = imread('../assigmnet_1/image/gull.jpg');
+
+x1 = grayslice(img1,200);
+% grayslice 將影像分割成指定數目的灰階區間並回傳索引影像
+% 這行會把 img1 的強度範圍依據 200 個等分閾值切成 200 個灰階區間，
+% 並回傳一個索引影像 x1，像素值為 1..200，對應到各區間的索引。
+% 若要檢視對應的實際灰階階調，可用 colormap 與顯示:
+map = gray(200);   % 200 階灰階對應的調色盤
+x1 = grayslice(img1,200);  % 已存在於原始程式中，這行保留以示說明
+
+% 顯示 index 影像 並套用對應灰階顏色表以說明分割結果
+figure;
+imshow(x1,[]); colormap(map); colorbar;
+title('x1 = grayslice(img1,200) 的索引影像與灰階階調對應');
+x2 = grayslice(img2,200);
+x3 = grayslice(img3,200);
+x4 = grayslice(img4,200);
+
+figure;
+subplot(2,2,1); imshow(x1); title('1');
+subplot(2,2,2); imshow(x2); title('2');
+subplot(2,2,3); imshow(x3); title('3');
+subplot(2,2,4); imshow(x4); title('4');
