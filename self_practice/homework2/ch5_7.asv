@@ -1,0 +1,37 @@
+I = [20 20 20 10 10 10 10 10 10;
+     20 20 20 20 20 20 20 20 10;
+     20 20 20 10 10 10 10 20 10;
+     20 20 10 10 10 10 10 20 10;
+     20 10 10 10 10 10 10 20 10;
+     10 10 10 10 20 10 10 20 10;
+     10 10 10 10 10 10 10 10 10;
+     20 10 20 20 10 10 10 20 20;
+     20 10 10 20 10 10 20 10 20];
+
+figure;
+imshow(I, []);
+title('Original Image');
+
+% apply gaussian filter
+cf1 = imfilter(I, fspecial('gaussian', [3,3],0.5));
+cf2 = imfilter(I, fspecial('gaussian', [3,3],1));
+cf3 = imfilter(I, fspecial('gaussian', [3,3],2));
+
+cf4 = imfilter(I, fspecial('gaussian', [7,7],1));
+cf5 = imfilter(I, fspecial('gaussian', [7,7],3));
+cf6 = imfilter(I, fspecial('gaussian', [7,7],6));
+
+cf7 = imfilter(I, fspecial('gaussian', [11,11],1));
+cf8 = imfilter(I, fspecial('gaussian', [11,11],4));
+cf9 = imfilter(I, fspecial('gaussian', [11,11],8));
+
+cf10 = imfilter(I, fspecial('gaussian', [21,21],1));
+cf11 = imfilter(I, fspecial('gaussian', [21,21],5));
+cf12 = imfilter(I, fspecial('gaussian', [21,21],10));
+
+figure;
+for k=1:12
+    subplot(4, 3, k);
+    imshow(cfk, []);
+end
+
